@@ -327,7 +327,7 @@ export const services: Service[] = [
     metaDescription:
       "BL Kakel & Bygg AB är din pålitliga partner för byggnation och renovering i Helsingborg — helhetslösning från konsultation till slutbesiktning. Kontakta oss idag.",
     heroEyebrow: "Byggnation & Renovering",
-    heroImage: "/images/hero/hero-byggnation.jpg",
+    heroImage: "/images/byggnation/byggnation-hero.jpg",
     introHeading: "Din pålitliga partner för byggnation & renovering",
     intro:
       "Oavsett om du planerar en omfattande renovering eller en nybyggnation är BL Kakel & Bygg AB din pålitliga partner i Helsingborg. Vi tar ansvar för hela processen — från idé och planering till färdigt, kvalitetssäkrat resultat.",
@@ -369,7 +369,21 @@ export const services: Service[] = [
     pricingHeading: "Förverkliga ditt byggprojekt med oss",
     pricingBody:
       "Vill du renovera eller bygga nytt? BL Kakel & Bygg AB är din trygga partner för byggnation och renovering i Helsingborg. Kontakta oss idag för en offert och låt oss skapa ett hållbart och stilrent resultat anpassat efter dina önskemål.",
-    gallery: [16, 19, 1, 9, 13, 21],
+    gallery: [],
+    galleryImages: [
+      {
+        src: "/images/byggnation/byggnation-pagaende-renovering.jpg",
+        alt: "Pågående totalrenovering av rum med synliga installationer",
+      },
+      {
+        src: "/images/byggnation/byggnation-fore-efter.jpg",
+        alt: "Före och efter-bild av renoverat rum med accentväggar",
+      },
+      {
+        src: "/images/byggnation/byggnation-nybygge.jpg",
+        alt: "Nybyggnation av villa med ställning",
+      },
+    ],
     ctaText: "Vill du renovera eller bygga nytt? Kontakta oss idag för en offert.",
   },
   {
