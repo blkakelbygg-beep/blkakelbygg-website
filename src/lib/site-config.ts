@@ -185,7 +185,7 @@ export const services: Service[] = [
     metaDescription:
       "Drömmer du om ett nytt, modernt badrum? BL Kakel & Bygg AB erbjuder badrumsrenovering i Helsingborg med GVK-auktoriserat hantverk, tydlig offert och 15+ års erfarenhet.",
     heroEyebrow: "Badrumsrenovering",
-    heroImage: "/images/hero/hero-badrum.jpg",
+    heroImage: "/images/badrumsrenovering/badrumsrenovering-hero.jpg",
     introHeading: "Ditt drömbadrum, byggt för att hålla",
     intro:
       "Drömmer du om ett nytt, modernt och stilrent badrum? På BL Kakel & Bygg AB erbjuder vi badrumsrenoveringar i Helsingborg med högsta kvalitet och noggrannhet — från första skiss till färdigt, inflyttningsklart badrum.",
