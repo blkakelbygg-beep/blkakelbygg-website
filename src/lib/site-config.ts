@@ -1,5 +1,6 @@
-export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://blkakelbygg.se";
+export const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL || "https://blkakelbygg.se"
+).replace(/\/$/, "");
 
 export const company = {
   name: "BL Kakel & Bygg AB",
