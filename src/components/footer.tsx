@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { FacebookIcon, InstagramIcon } from "./social-icons";
 import { Logo } from "./logo";
 import { company, mainNav, services } from "@/lib/site-config";
+import { blogPosts, blogPostPath } from "@/lib/blog-posts";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -10,7 +11,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-surface-2">
       <div className="container-page py-14 sm:py-16">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div>
             <Logo />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
@@ -45,6 +46,22 @@ export function Footer() {
                 <li key={s.slug}>
                   <Link href={s.href} className="text-sm text-muted transition-colors hover:text-brand-600 dark:hover:text-brand-400">
                     {s.navLabel}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wide text-fg">Blogg</h3>
+            <ul className="mt-4 space-y-2.5">
+              {blogPosts.map((post) => (
+                <li key={post.slug}>
+                  <Link
+                    href={blogPostPath(post)}
+                    className="text-sm text-muted transition-colors hover:text-brand-600 dark:hover:text-brand-400"
+                  >
+                    {post.title}
                   </Link>
                 </li>
               ))}
