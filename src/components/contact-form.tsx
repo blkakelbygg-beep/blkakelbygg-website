@@ -18,11 +18,15 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    // React clears e.currentTarget as soon as this handler yields (e.g. at an
+    // `await`), so it must be captured now — reading it after an await gives
+    // null and throws when we later call .reset() on it.
+    const formEl = e.currentTarget;
     setStatus("submitting");
     setErrorMsg(null);
     setFieldErrors({});
 
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(formEl);
     const raw = {
       name: String(formData.get("name") || ""),
       email: String(formData.get("email") || ""),
@@ -65,7 +69,7 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
       }
 
       setStatus("success");
-      e.currentTarget.reset();
+      formEl.reset();
     } catch (err) {
       // We couldn't confirm a response, but the request may still have
       // reached the server (e.g. a slow connection that dropped right as the
