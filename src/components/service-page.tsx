@@ -14,7 +14,8 @@ import { ContactForm } from "./contact-form";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "./json-ld";
 
 export function ServicePageTemplate({ service }: { service: Service }) {
-  const gallery = projectImages.filter((img) => service.gallery.includes(img.id));
+  const gallery =
+    service.galleryImages ?? projectImages.filter((img) => service.gallery.includes(img.id));
 
   return (
     <>
@@ -83,7 +84,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
             />
             <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
               {gallery.slice(0, 8).map((img, i) => (
-                <Reveal key={img.id} delay={i * 0.05} y={16}>
+                <Reveal key={img.src} delay={i * 0.05} y={16}>
                   <div className="group relative aspect-square overflow-hidden rounded-2xl border border-border">
                     <Image
                       src={img.src}

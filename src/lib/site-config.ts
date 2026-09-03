@@ -77,6 +77,12 @@ export type Service = {
   pricingHeading: string;
   pricingBody: string;
   gallery: number[];
+  /**
+   * Optional dedicated gallery images for this service, used instead of the
+   * shared `gallery` id lookup above. Use this when a service has its own
+   * photo set that shouldn't also appear in the shared /vara-projekt gallery.
+   */
+  galleryImages?: { src: string; alt: string }[];
   ctaText: string;
 };
 
@@ -348,7 +354,7 @@ export const services: Service[] = [
     metaDescription:
       "Microcement i Helsingborg för golv, väggar, badrum och bänkskivor. Fogfri, vattentålig och modern yta i valfri kulör. BL Kakel & Bygg AB — kostnadsfri offert.",
     heroEyebrow: "Microcement",
-    heroImage: "/images/hero/hero-microcement.jpg",
+    heroImage: "/images/microcement/microcement-hero-kok.jpg",
     introHeading: "Stilrent, hållbart och modernt för alla ytor",
     intro:
       "Microcement är en elegant och flexibel ytskiktslösning som kan appliceras på golv, väggar, bänkskivor och möbler. Det skapar en sömlös, fogfri yta med en exklusiv känsla, perfekt för både hem och kommersiella miljöer.",
@@ -385,7 +391,29 @@ export const services: Service[] = [
     pricingHeading: "Förverkliga ditt projekt!",
     pricingBody:
       "Ge ditt hem eller din lokal en exklusiv och modern känsla med microcement. Oavsett om du vill ha en ny golvyta, en elegant bänkskiva eller en fogfri badrumslösning — vi levererar kvalitet med precision.",
-    gallery: [1, 6, 10, 12, 17, 22],
+    gallery: [],
+    galleryImages: [
+      {
+        src: "/images/microcement/microcement-dusch.jpg",
+        alt: "Microcementklädd duschvägg i badrum",
+      },
+      {
+        src: "/images/microcement/microcement-trappa.jpg",
+        alt: "Trappa med sömlös microcementyta i grå kulör",
+      },
+      {
+        src: "/images/microcement/microcement-vagg-dekor.jpg",
+        alt: "Dekorobjekt mot strukturerad microcementvägg",
+      },
+      {
+        src: "/images/microcement/microcement-applicering.jpg",
+        alt: "Handapplicering av microcement på vägg",
+      },
+      {
+        src: "/images/microcement/microcement-vardagsrum.jpg",
+        alt: "Microcementpanel på vägg i vardagsrum",
+      },
+    ],
     ctaText: "Låt oss hjälpa dig skapa en modern och exklusiv yta — kontakta oss idag!",
   },
 ];
