@@ -242,7 +242,7 @@ export const services: Service[] = [
     metaDescription:
       "Nytt kök i Helsingborg? BL Kakel & Bygg AB erbjuder helhetslösningar för köksrenovering — kakelsättning, bänkskivor, skåp och installation. Begär offert idag.",
     heroEyebrow: "Köksrenovering",
-    heroImage: "/images/hero/hero-kok.jpg",
+    heroImage: "/images/koksrenovering/koksrenovering-hero.jpg",
     introHeading: "Ett kök som höjer både värde och vardagskomfort",
     intro:
       "Ett funktionellt och stilrent kök höjer både hemmets värde och din vardagskomfort. På BL Kakel & Bygg AB erbjuder vi helhetslösningar för köksrenovering i Helsingborg — från kakelsättning och golvläggning till montering av skåp, bänkskivor och smarta detaljer. Vi skapar kök som kombinerar estetik, hållbarhet och funktionalitet.",
@@ -282,7 +282,37 @@ export const services: Service[] = [
     pricingHeading: "Hur mycket kostar ett nytt kök?",
     pricingBody:
       "Priset på en köksrenovering beror på flera faktorer, såsom storlek, materialval och omfattningen av arbetet. Kostnaden påverkas av om du väljer standardlösningar eller exklusiva material och specialanpassningar. Vi erbjuder allt från plattsättning och bänkskivor till komplett köksmontering — skräddarsytt efter dina önskemål.",
-    gallery: [2, 20, 15, 22, 23, 24],
+    gallery: [],
+    galleryImages: [
+      {
+        src: "/images/koksrenovering/koksrenovering-material.jpg",
+        alt: "Materialval och kulörprover för köksrenovering",
+      },
+      {
+        src: "/images/koksrenovering/koksrenovering-kakling-pagaende.jpg",
+        alt: "Pågående kakelsättning i sillbensmönster i köket",
+      },
+      {
+        src: "/images/koksrenovering/koksrenovering-hantverkare.jpg",
+        alt: "Hantverkare sätter kakel ovanför spisen i köket",
+      },
+      {
+        src: "/images/koksrenovering/koksrenovering-marmor.jpg",
+        alt: "Exklusivt kök med marmorbänkskiva och köksö",
+      },
+      {
+        src: "/images/koksrenovering/koksrenovering-tradkok.jpg",
+        alt: "Kök i trä med köksö och matplats",
+      },
+      {
+        src: "/images/koksrenovering/koksrenovering-vedspis.jpg",
+        alt: "Mysigt vitt kök med vedspis",
+      },
+      {
+        src: "/images/koksrenovering/koksrenovering-turkos-kakel.jpg",
+        alt: "Kök med turkost kakel som stänkskydd",
+      },
+    ],
     ctaText: "Är du redo att förvandla ditt kök? Kontakta oss idag för en kostnadsfri offert.",
   },
   {
