@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteUrl, services } from "@/lib/site-config";
-import { blogPosts } from "@/lib/blog-posts";
+import { blogPosts, blogPostPath } from "@/lib/blog-posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ["", "/om-oss", "/vara-projekt", "/blogg", "/kontakta-oss"];
@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     })),
     ...blogPosts.map((post) => ({
-      url: `${siteUrl}/blogg/${post.slug}`,
+      url: `${siteUrl}${blogPostPath(post)}`,
       lastModified: new Date(post.date),
       changeFrequency: "yearly" as const,
       priority: 0.6,

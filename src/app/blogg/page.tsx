@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { buildMetadata } from "@/lib/metadata";
 import { company, siteUrl } from "@/lib/site-config";
-import { blogPosts } from "@/lib/blog-posts";
+import { blogPosts, blogPostPath } from "@/lib/blog-posts";
 import { PageHero } from "@/components/page-hero";
 import { RevealGroup, RevealItem } from "@/components/reveal";
 import { CtaBanner } from "@/components/cta-banner";
@@ -45,7 +45,7 @@ export default function BloggPage() {
             {blogPosts.map((post) => (
               <RevealItem key={post.slug}>
                 <Link
-                  href={`/blogg/${post.slug}`}
+                  href={blogPostPath(post)}
                   className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-surface card-shadow transition-transform duration-300 hover:-translate-y-1"
                 >
                   <div className="relative aspect-[4/3] w-full overflow-hidden">

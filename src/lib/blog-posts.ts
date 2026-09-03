@@ -11,9 +11,39 @@ export type BlogPost = {
    * A string starting with "## " is rendered as a subheading instead of a paragraph.
    */
   content: string[];
+  /**
+   * Optional canonical URL override. By default a post lives at
+   * /blogg/<slug>. Set this to publish a post at its own dedicated
+   * top-level route instead (a page must exist at that path) — it's
+   * excluded from /blogg/[slug] so the content only ever has one URL.
+   */
+  href?: string;
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "kakel-bygg-renovering-helsingborg",
+    href: "/kakel-bygg-renovering-helsingborg",
+    title: "Kakel, bygg och renovering i Helsingborg – en helhetsguide",
+    excerpt:
+      "Fundera på ditt nästa projekt men vet inte var du ska börja? Här reder vi ut hur kakel, byggnation och renovering hänger ihop — och varför en helhetslösning ofta lönar sig.",
+    category: "Renovering",
+    date: "2026-09-03",
+    image: "/images/byggnation/byggnation-hero.jpg",
+    readTime: "5 min",
+    content: [
+      "De flesta hemrenoveringar handlar sällan om bara en sak. Ett nytt badrum kräver både kakelsättning och ofta VVS-arbete. En köksrenovering kan innebära allt från ny bänkskiva till att en vägg behöver flyttas. På BL Kakel & Bygg AB möter vi det här varje dag — därför får vi ofta frågan hur kakel, byggnation och renovering egentligen hänger ihop, och vad som skiljer dem åt. Här reder vi ut begreppen och ger dig några saker att tänka på inför ditt eget projekt.",
+      "## Kakel och plattsättning – grunden i våtrum och kök",
+      "Plattsättning är ofta den del av ett projekt som syns mest, men som också ställer högst krav på fackmässigt utförande. I våtrum som badrum och tvättstuga är en korrekt utförd tätskiktning under kaklet minst lika viktig som själva plattorna — det är den som avgör om rummet håller tätt i decennier. Vi arbetar enligt GVK:s branschregler och rekommenderar alltid att plattsättning i våtutrymmen utförs av auktoriserade hantverkare, oavsett hur enkelt eller stort projektet är.",
+      "## Byggnation – när projektet kräver mer än nya ytskikt",
+      "Ibland räcker det inte att byta golv och kakel. Om planlösningen inte fungerar, om en vägg behöver flyttas, eller om el- och VVS-installationer är föråldrade, handlar det om byggnation snarare än ren ytrenovering. Det kan gälla allt från att slå ihop två mindre rum till att bygga ut ett kök eller anpassa ett hus för en ny familjesituation. Den här typen av arbete kräver noggrann planering redan från start, eftersom ändringar i bärande konstruktioner eller installationer påverkar resten av projektet.",
+      "## Renovering – att lyfta ett hem utan att bygga om från grunden",
+      "Renovering behöver inte betyda att allt rivs ut. Många projekt handlar om att modernisera det som redan finns — nya ytskikt, uppdaterad belysning, byte av kök- eller badrumsinredning och allmän upprustning som förlänger husets livslängd. Det är ofta den mest kostnadseffektiva vägen till ett fräschare hem, förutsatt att stommen och installationerna under ytan är i gott skick.",
+      "## Varför en helhetslösning ofta lönar sig",
+      "Många av våra kunder kommer till oss efter att ha försökt samordna flera olika hantverkare själva — en för kakel, en för snickeri, en för VVS — och upptäckt hur mycket tid det tar att hålla ihop tidsplan och ansvar mellan dem. När kakel, byggnation och renovering hanteras av samma team slipper du vara mellanhand mellan olika entreprenörer. Du får en tydlig offert, en gemensam tidsplan och en part som tar ansvar för helheten — från första konsultation till slutbesiktning.",
+      "Oavsett om ditt projekt handlar om ny plattsättning i badrummet, en köksutbyggnad eller en renovering av hela hemmet hjälper vi dig gärna att reda ut vad som faktiskt behöver göras — och i vilken ordning. Kontakta oss för ett kostnadsfritt möte, så går vi igenom just ditt projekt tillsammans.",
+    ],
+  },
   {
     slug: "sa-valjer-du-ratt-kakel-till-badrummet",
     title: "Så väljer du rätt kakel till badrummet",
@@ -81,3 +111,6 @@ export const blogPosts: BlogPost[] = [
 ];
 
 export const blogPostBySlug = (slug: string) => blogPosts.find((p) => p.slug === slug);
+
+/** A post's canonical path — /blogg/<slug> unless it overrides with `href`. */
+export const blogPostPath = (post: BlogPost) => post.href ?? `/blogg/${post.slug}`;
