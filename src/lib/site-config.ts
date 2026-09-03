@@ -170,7 +170,7 @@ export const services: Service[] = [
     pricingHeading: "Vad kostar plattsättning i Helsingborg?",
     pricingBody:
       "Priset beror på ytans storlek, valt material och eventuell rivning av befintliga plattor. Vi ger dig alltid en tydlig, kostnadsfri offert innan arbetet påbörjas — utan dolda avgifter.",
-    gallery: [3, 4, 7, 8, 9, 12, 17, 21],
+    gallery: [4, 6, 8, 10, 15, 16],
     ctaText: "Kontakta oss idag för professionell plattsättning i Helsingborg.",
   },
   {
@@ -227,7 +227,7 @@ export const services: Service[] = [
     pricingHeading: "Hur mycket kostar en badrumsrenovering?",
     pricingBody:
       "Priset för att renovera badrummet beror på flera faktorer, som storlek, materialval och omfattningen av arbetet som krävs. Oavsett om du vill ha en standardlösning eller satsa på exklusiva inslag och skräddarsydd design kan den slutgiltiga kostnaden variera. Vi erbjuder allt från plattsättning och montering av badrumsmöbler till fullständig installation — anpassat för att uppfylla just dina önskemål.",
-    gallery: [2, 5, 6, 10, 11, 13, 14, 18],
+    gallery: [1, 2, 3, 5, 7, 9, 11, 13],
     ctaText: "Är du redo att förvandla ditt badrum? Kontakta oss idag för en kostnadsfri offert.",
   },
   {
@@ -573,13 +573,21 @@ export const offeredCrafts = [
   "Fönster & solskydd",
 ];
 
-export const projectImageCount = 24;
-
-export const projectImages = Array.from({ length: projectImageCount }, (_, i) => {
-  const n = i + 1;
-  return {
-    id: n,
-    src: `/images/projects/project-${String(n).padStart(2, "0")}.jpg`,
-    alt: `BL Kakel & Bygg AB – genomfört projekt ${n}`,
-  };
-});
+export const projectImages = [
+  { id: 1, src: "/images/projects/project-25.jpg", alt: "Dusch med kakel i sillbensmönster och infälld hylla" },
+  { id: 2, src: "/images/projects/project-26.jpg", alt: "Badrum med kakel, mörk kommod och LED-spegel" },
+  { id: 3, src: "/images/projects/project-27.jpg", alt: "Badrum med fristående badkar och duschvägg i glas" },
+  { id: 4, src: "/images/projects/project-28.jpg", alt: "Kök med kakel i sillbensmönster ovanför diskbänken" },
+  { id: 5, src: "/images/projects/project-29.jpg", alt: "Badrum med badkar, olivträd och varma detaljer" },
+  { id: 6, src: "/images/projects/project-30.jpg", alt: "Uterum med kakelgolv i sillbensmönster" },
+  { id: 7, src: "/images/projects/project-31.jpg", alt: "Spa-inspirerat badrum med dubbla duschar" },
+  { id: 8, src: "/images/projects/project-32.jpg", alt: "Kaklat golv i schackrutigt mönster i badrum" },
+  { id: 9, src: "/images/projects/project-33.jpg", alt: "Duschutrymme med handdukstork och kakel" },
+  { id: 10, src: "/images/projects/project-34.jpg", alt: "Tvättstuga med sexkantigt kakelgolv" },
+  { id: 11, src: "/images/projects/project-35.jpg", alt: "Tvättstuga med rund belyst spegel" },
+  { id: 12, src: "/images/projects/project-36.jpg", alt: "Tvättstuga med rund spegel och bänkskiva i trä" },
+  { id: 13, src: "/images/projects/project-37.jpg", alt: "Toalettutrymme med kakel och förvaringsskåp i trä" },
+  { id: 14, src: "/images/projects/project-38.jpg", alt: "Tvättstuga med toalett och förvaring" },
+  { id: 15, src: "/images/projects/project-39.jpg", alt: "Plattsättning med distanser och utsättning i duschutrymme" },
+  { id: 16, src: "/images/projects/project-40.jpg", alt: "Detaljbild av golvbrunn i kaklat golv" },
+];

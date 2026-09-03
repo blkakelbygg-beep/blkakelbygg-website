@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ArrowRight, Clock3, ShieldCheck } from "lucide-react";
 import type { Service } from "@/lib/site-config";
 import { projectImages, siteUrl, company } from "@/lib/site-config";
@@ -11,6 +10,7 @@ import { CtaBanner } from "./cta-banner";
 import { Reveal } from "./reveal";
 import { Button } from "./button";
 import { ContactForm } from "./contact-form";
+import { ServiceGallery } from "./service-gallery";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "./json-ld";
 
 export function ServicePageTemplate({ service }: { service: Service }) {
@@ -82,21 +82,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
               align="center"
               className="mx-auto"
             />
-            <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
-              {gallery.slice(0, 8).map((img, i) => (
-                <Reveal key={img.src} delay={i * 0.05} y={16}>
-                  <div className="group relative aspect-square overflow-hidden rounded-2xl border border-border">
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  </div>
-                </Reveal>
-              ))}
-            </div>
+            <ServiceGallery images={gallery} />
             <Reveal className="mt-10 text-center">
               <Button href="/vara-projekt" variant="outline">
                 Se fler projekt

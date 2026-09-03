@@ -10,7 +10,7 @@ export const metadata = buildMetadata({
   description:
     "Se ett urval av genomförda kakel-, badrums- och köksprojekt av BL Kakel & Bygg AB i Helsingborg. Filtrera efter tjänst och klicka för att zooma in.",
   path: "/vara-projekt",
-  image: "/images/projects/project-13.jpg",
+  image: "/images/projects/project-25.jpg",
 });
 
 export default function VaraProjektPage() {
@@ -27,7 +27,7 @@ export default function VaraProjektPage() {
         eyebrow="Våra projekt"
         title="Upptäck vårt hantverk"
         subtitle="Från idé till färdigt resultat — här visar vi ett urval av projekt vi genomfört tillsammans med våra kunder i Helsingborg."
-        image="/images/projects/project-09.jpg"
+        image="/images/projects/project-25.jpg"
         breadcrumbLabel="Våra projekt"
       />
 
