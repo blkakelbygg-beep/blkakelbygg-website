@@ -4,6 +4,7 @@ import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Loader2, Send, TriangleAlert } from "lucide-react";
 import { contactFormSchema, serviceOptions } from "@/lib/validation";
+import { company } from "@/lib/site-config";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -43,11 +44,17 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
       return;
     }
 
+    // Give slow connections/cold starts real headroom, but still fail with a
+    // clear message instead of hanging forever if something goes wrong.
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 25000);
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(parsed.data),
+        signal: controller.signal,
       });
       const data = await res.json();
 
@@ -59,9 +66,22 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
 
       setStatus("success");
       e.currentTarget.reset();
-    } catch {
+    } catch (err) {
+      // We couldn't confirm a response, but the request may still have
+      // reached the server (e.g. a slow connection that dropped right as the
+      // reply came back) — so we avoid claiming it definitely failed.
       setStatus("error");
-      setErrorMsg("Kunde inte skicka meddelandet. Kontrollera din internetanslutning.");
+      if (err instanceof DOMException && err.name === "AbortError") {
+        setErrorMsg(
+          `Det tog ovanligt lång tid att få svar. Din förfrågan kan ändå ha kommit fram — testa gärna igen om en stund, eller ring oss direkt på ${company.phone}.`,
+        );
+      } else {
+        setErrorMsg(
+          `Kunde inte bekräfta att meddelandet skickades. Kontrollera din internetanslutning och testa igen, eller ring oss på ${company.phone}.`,
+        );
+      }
+    } finally {
+      clearTimeout(timeoutId);
     }
   }
 
